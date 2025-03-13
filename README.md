@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HomeWork Assignemnt 2: Same Stats, Different Graphs
 
-## Getting Started
+This project uses the famous dinosaur dataset from the Datasaurus Dozen to illustrate a datasets with identical statistical summaries can look dramatically different when visualized. The interactivity allows users to brush over the scatterplots to reveal subtle variations, while the bar chart updates to reflect the changes, providing a dynamic exploration of data visualization.
 
-First, run the development server:
+## Technologies Used
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **React** & **Next.js**: For building the UI and handling client-side rendering.
+- **D3.js**: For dynamic, data-driven visualizations.
+- **TypeScript**: For type safety and code clarity.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Live Website
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Check out the live website [here](https://info-viz-hw2.vercel.app).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Folder Structure
 
-## Learn More
+├── components
+│ ├── BarChart.tsx
+│ ├── Scatterplot.tsx
+│ └── ScatterplotGroup.tsx
+├── public
+│ └── datasaurus.json
+└── page.tsx
 
-To learn more about Next.js, take a look at the following resources:
+## page.tsx
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Fetches the dataset from the JSON file, from the public folder.
+- Manages state, including the entire datasets and the indices of data points selected via brushing.
+- Passes the selected data to the BarChart component and updates the state.
+- Also renders the ScatterplotGroup component, which displays multiple scatterplots for other datasets, using the same selection state to highlight points.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scatterplot.tsx
 
-## Deploy on Vercel
+- Implements an interactive scatterplot using D3.js
+- Allows users to brush over data points, triggering an onBrush callback.
+- This callback sends the selected data back to page.tsx, which updates the selection state.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## BarChart.tsx
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Receives data from page.tsx
+- Computes the mean values and displays them as bars.
+
+## ScatterplotGroup.tsx
+
+- Uses the Scatterplot component to render a group of scatterplots for various datasets.
