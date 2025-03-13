@@ -1,4 +1,4 @@
-# HomeWork Assignemnt 2: Same Stats, Different Graphs
+# HomeWork Assignment 2: Same Stats, Different Graphs
 
 This project uses the famous dinosaur dataset from the Datasaurus Dozen to illustrate a datasets with identical statistical summaries can look dramatically different when visualized. The interactivity allows users to brush over the scatterplots to reveal subtle variations, while the bar chart updates to reflect the changes, providing a dynamic exploration of data visualization.
 
