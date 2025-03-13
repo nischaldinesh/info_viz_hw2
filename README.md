@@ -6,21 +6,10 @@ This project uses the famous dinosaur dataset from the Datasaurus Dozen to illus
 
 - **React** & **Next.js**: For building the UI and handling client-side rendering.
 - **D3.js**: For dynamic, data-driven visualizations.
-- **TypeScript**: For type safety and code clarity.
 
 ## Live Website
 
 Check out the live website [here](https://info-viz-hw2.vercel.app).
-
-## Folder Structure
-
-├── components
-│ ├── BarChart.tsx
-│ ├── Scatterplot.tsx
-│ └── ScatterplotGroup.tsx
-├── public
-│ └── datasaurus.json
-└── page.tsx
 
 ## page.tsx
 
